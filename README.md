@@ -1,4 +1,4 @@
-**Rocky LinuxでGitHubとGitを使用する方法**
+**Rocky LinuxでGitHubとGitを使用して共同開発する方法**
 =====================================
 
 ### Gitのインストール
@@ -61,6 +61,14 @@ GitHubにリポジトリを作成し、ローカルのリポジトリをリモ�
 git remote add origin git@github.com:your_username/your_repo_name.git
 git push -u origin master
 ```
+
+### リモートリポジトリの更新
+
+リモートリポジトリが更新されてローカルリポジトリにその変更を加えたいときは、以下のコマンドを実行してください。
+```bash
+git pull
+```
+
 ### Pull Requestの作成
 
 Pull Requestを作成するには、以下の手順に従ってください。
@@ -69,6 +77,16 @@ Pull Requestを作成するには、以下の手順に従ってください。
 2. リポジトリのページに移動します。
 3. 右上の「New pull request」ボタンをクリックします。
 4. Pull Requestのタイトルと説明を入力して、「Create pull request」ボタンをクリックします。
+
+### Pull Requestのmerge
+
+Pull Requestをmergeするには、以下の手順に従ってください。
+
+1. GitHubのウェブサイトにアクセスします。
+2. リポジトリのページに移動します。
+3. Pull Requestのページに移動します。
+4. mergeするPull Requestを選択します。
+5. 「Merge pull request」ボタンをクリックします。
 
 ### Gitの基本コマンド
 
