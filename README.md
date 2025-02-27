@@ -1,38 +1,86 @@
-# Gitの使い方
+**Rocky LinuxでGitHubとGitを使用する方法**
+=====================================
 
-- [Gitの使い方](#gitの使い方)
-  - [インストールの仕方](#インストールの仕方)
-  - [Gitの基本](#gitの基本)
-  - [GitHubの使い方](#githubの使い方)
-  - [共同開発の仕方](#共同開発の仕方)
+### Gitのインストール
 
-## インストールの仕方
-
-Rocky Linux
-```shell
-sudo dnf install -y git
+Rocky Linuxには、デフォルトでGitがインストールされていません。以下のコマンドを実行してGitをインストールしてください。
+```bash
+sudo dnf install git
 ```
+### GitHubアカウントの作成
 
-## Gitの基本
+GitHubアカウントを作成するには、以下の手順に従ってください。
 
-ローカルリポジトリの作成
-```shell
+1. [GitHubのウェブサイト](https://github.com/)にアクセスします。
+2. 右上の「Sign up」ボタンをクリックします。
+3. ユーザー名、メールアドレス、パスワードを入力して「Create account」ボタンをクリックします。
+
+### Gitの設定
+
+Gitを使用する前に、以下のコマンドを実行してGitの設定を行ってください。
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+### SSHの設定
+
+GitHubにSSH接続するには、以下の手順に従ってください。
+
+1. SSHキーペアを作成します。
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+2. 公開鍵をGitHubに追加します。
+```bash
+cat ~/.ssh/ed25519.pub
+```
+3. GitHubの設定ページに移動し、SSHとGPGキーのページを開きます。
+4. 「New SSH key」ボタンをクリックし、公開鍵を貼り付けます。
+5. 「Add SSH key」ボタンをクリックします。
+
+### リポジトリの作成
+
+新しいリポジトリを作成するには、以下のコマンドを実行してください。
+```bash
+mkdir myproject
+cd myproject
 git init
 ```
-<br>
+### ファイルの追加とコミット
 
-個別にコミットしたい場合
-```shell
-git add [ファイル名]
+ファイルを追加してコミットするには、以下のコマンドを実行してください。
+```bash
+touch README.md
+git add README.md
+git commit -m "Initial commit"
 ```
-<br>
+### リモートリポジトリの追加
 
-すべてのファイルをコミットしたい場合
-```shell
-git add .
+GitHubにリポジトリを作成し、ローカルのリポジトリをリモートリポジトリに接続するには、以下のコマンドを実行してください。
+```bash
+git remote add origin git@github.com:your_username/your_repo_name.git
+git push -u origin master
 ```
-<br>
+### Pull Requestの作成
 
-## GitHubの使い方
+Pull Requestを作成するには、以下の手順に従ってください。
 
-## 共同開発の仕方
+1. GitHubのウェブサイトにアクセスします。
+2. リポジトリのページに移動します。
+3. 右上の「New pull request」ボタンをクリックします。
+4. Pull Requestのタイトルと説明を入力して、「Create pull request」ボタンをクリックします。
+
+### Gitの基本コマンド
+
+以下は、Gitの基本的なコマンドです。
+
+* `git init`: リポジトリを初期化します。
+* `git add <file>`: ファイルをステージングエリアに追加します。
+* `git commit -m "<message>"`: 変更をコミットします。
+* `git log`: コミット履歴を表示します。
+* `git branch`: ブランチの一覧を表示します。
+* `git checkout <branch>`: ブランチを切り替えます。
+* `git merge <branch>`: ブランチをマージします。
+* `git remote add <name> <url>`: リモートリポジトリを追加します。
+* `git push`: 変更をリモートリポジトリにプッシュします。
+* `git pull`: リモートリポジトリの変更をプルします。
