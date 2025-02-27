@@ -11,7 +11,7 @@ sudo dnf install git
 
 GitHubアカウントを作成するには、以下の手順に従ってください。
 
-1. [GitHubのウェブサイト](https://github.com/)にアクセスします。
+1. [GitHubのウェブサイト(https://github.com/)](https://github.com/)にアクセスします。
 2. 右上の「Sign up」ボタンをクリックします。
 3. ユーザー名、メールアドレス、パスワードを入力して「Create account」ボタンをクリックします。
 
