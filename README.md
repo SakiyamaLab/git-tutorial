@@ -1,4 +1,4 @@
-**Rocky LinuxでGitHubとGitを使用して共同開発する方法**
+**GitHubとGitを使用して共同開発する方法**
 =====================================
 
 ### Gitのインストール
@@ -62,7 +62,7 @@ git remote add origin git@github.com:your_username/your_repo_name.git
 git push -u origin master
 ```
 
-### リモートリポジトリの更新
+### ローカルリポジトリの更新
 
 リモートリポジトリが更新されてローカルリポジトリにその変更を加えたいときは、以下のコマンドを実行してください。
 ```bash
